@@ -5,7 +5,7 @@
     "@antfu/react",
     "plugin:react-hooks/recommended"
   ],
-  "ignorePatterns": ["dist"],
+  "ignorePatterns": ["dist", "src/router.ts"],
   "parser": "@typescript-eslint/parser",
   "plugins": ["react-refresh"],
   "rules": {
