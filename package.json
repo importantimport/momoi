@@ -30,6 +30,7 @@
     "@vanilla-extract/vite-plugin": "^3.8.2",
     "@vitejs/plugin-react-swc": "^3.3.2",
     "eslint": "^8.47.0",
+    "eslint-plugin-perfectionist": "^1.5.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "lightningcss": "^1.21.5",

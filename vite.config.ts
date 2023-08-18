@@ -1,8 +1,8 @@
-import { defineConfig, splitVendorChunkPlugin } from 'vite'
-import million from 'million/compiler'
-import react from '@vitejs/plugin-react-swc'
 import generouted from '@generouted/react-router/plugin'
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin'
+import react from '@vitejs/plugin-react-swc'
+import million from 'million/compiler'
+import { defineConfig, splitVendorChunkPlugin } from 'vite'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
 // https://vitejs.dev/config/

@@ -1,18 +1,18 @@
 import { style } from '@vanilla-extract/css'
 
 export const header = style({
-  backgroundColor: 'pink',
-  padding: '1rem',
-  display: 'flex',
   alignItems: 'center',
+  backgroundColor: 'pink',
+  display: 'flex',
   gap: '1rem',
+  padding: '1rem',
 })
 
 export const headerTitle = style({
   filter: 'url(#white)',
+  fontSize: '1.5rem',
   fontVariant: 'text',
   fontVariantEmoji: 'text',
-  fontSize: '1.5rem',
 })
 
 export const headerButton = style({

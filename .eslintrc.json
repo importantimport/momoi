@@ -3,6 +3,7 @@
   "env": { "browser": true, "es2020": true },
   "extends": [
     "@antfu/react",
+    "plugin:perfectionist/recommended-natural",
     "plugin:react-hooks/recommended"
   ],
   "ignorePatterns": ["dist", "src/router.ts"],

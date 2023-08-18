@@ -7,8 +7,8 @@ export const initClient = async (): Promise<MatrixClient> => {
     // baseUrl: localStorage.getItem('base_url') ?? '',
     // accessToken: localStorage.getItem('access_token') ?? '',
     // userId: localStorage.getItem('user_id') ?? '',
-    baseUrl: import.meta.env.MOMOI_BASE_URL,
     accessToken: import.meta.env.MOMOI_ACCESS_TOKEN,
+    baseUrl: import.meta.env.MOMOI_BASE_URL,
     userId: import.meta.env.MOMOI_USER_ID,
   })
 
@@ -25,15 +25,15 @@ export const loginWithPassword = async (baseUrl: string, user: string, password:
       type: 'm.id.user',
       user,
     },
-    password,
     initial_device_display_name,
+    password,
   })
 }
 
 export const loginWithToken = async (baseUrl: string, token: string) => {
   const client = createClient({ baseUrl })
   await client.login('m.login.token', {
-    token,
     initial_device_display_name,
+    token,
   })
 }
