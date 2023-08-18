@@ -9,6 +9,7 @@ export default defineConfig({
     rollupOptions: {
       treeshake: 'recommended',
     },
+    target: 'esnext',
   },
   plugins: [
     million.vite({ auto: true }),
