@@ -11,6 +11,7 @@ export default defineConfig({
     },
     target: 'esnext',
   },
+  envPrefix: ['MOMOI_', 'VITE_'],
   plugins: [
     million.vite({ auto: true }),
     react(),
