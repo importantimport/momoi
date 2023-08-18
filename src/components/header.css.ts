@@ -5,6 +5,7 @@ export const header = style({
   backgroundColor: 'pink',
   display: 'flex',
   gap: '1rem',
+  height: '2rem',
   padding: '1rem',
 })
 
