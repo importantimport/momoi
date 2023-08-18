@@ -5,6 +5,11 @@ import generouted from '@generouted/react-router/plugin'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  build: {
+    rollupOptions: {
+      treeshake: 'recommended',
+    },
+  },
   plugins: [
     million.vite({ auto: true }),
     react(),
