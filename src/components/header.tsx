@@ -1,4 +1,4 @@
-import { header, headerButton, headerTitle } from './header.css'
+import { header, headerButton, headerTitle } from '~/components/header.css'
 
 export const Header = () => (
   <header className={header}>

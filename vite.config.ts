@@ -3,6 +3,7 @@ import million from 'million/compiler'
 import react from '@vitejs/plugin-react-swc'
 import generouted from '@generouted/react-router/plugin'
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin'
+import tsconfigPaths from 'vite-tsconfig-paths'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -21,5 +22,6 @@ export default defineConfig(({ mode }) => ({
     generouted(),
     vanillaExtractPlugin({ identifiers: mode === 'production' ? 'short' : 'debug' }),
     splitVendorChunkPlugin(),
+    tsconfigPaths(),
   ],
 }))
