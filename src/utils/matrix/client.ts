@@ -4,16 +4,14 @@ const initial_device_display_name: string = import.meta.env.MOMOI_INITIAL_DEVICE
 
 export const initClient = async (): Promise<MatrixClient> => {
   const client = createClient({
-    // baseUrl: localStorage.getItem('base_url') ?? '',
-    // accessToken: localStorage.getItem('access_token') ?? '',
-    // userId: localStorage.getItem('user_id') ?? '',
-    accessToken: import.meta.env.MOMOI_ACCESS_TOKEN,
+    // .well-known/matrix/client m.homeserver
     baseUrl: import.meta.env.MOMOI_BASE_URL,
-    userId: import.meta.env.MOMOI_USER_ID,
+    // .well-known/matrix/client m.identity_server
+    // idBaseUrl: import.meta.env.MOMOI_DEFAULT_IS_URL,
   })
 
   await client.initRustCrypto()
-  await client.startClient()
+  // await client.startClient()
 
   return client
 }
