@@ -1,6 +1,8 @@
 import { Slot } from '@radix-ui/react-slot'
 import * as React from 'react'
 
+import { button } from './button.css'
+
 export type ButtonProps
   = React.ButtonHTMLAttributes<HTMLButtonElement>
   & {
@@ -12,6 +14,7 @@ export const Button
     const Comp = asChild ? Slot : 'button'
 
     return <Comp
+      className={button}
       ref={ref}
       {...props}
     />
