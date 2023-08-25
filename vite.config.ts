@@ -1,4 +1,5 @@
 import generouted from '@generouted/react-router/plugin'
+import UnheadVite from '@unhead/addons/vite'
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin'
 import react from '@vitejs/plugin-react-swc'
 import million from 'million/compiler'
@@ -20,6 +21,7 @@ export default defineConfig(({ mode }) => ({
     million.vite({ auto: true }),
     react(),
     generouted(),
+    UnheadVite(),
     vanillaExtractPlugin({ identifiers: mode === 'production' ? 'short' : 'debug' }),
     splitVendorChunkPlugin(),
     tsconfigPaths(),
