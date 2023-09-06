@@ -1,7 +1,7 @@
+import { button } from '@momoi/css/styles/components/button'
+import '@momoi/css/styles/components/button.css'
 import { Slot } from '@radix-ui/react-slot'
 import * as React from 'react'
-
-import { button } from './button.css'
 
 export type ButtonProps
   = React.ButtonHTMLAttributes<HTMLButtonElement>

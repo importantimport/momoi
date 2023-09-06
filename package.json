@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "dev:react": "pnpm -rF @momoi/react dev",
+    "dev:react": "run-p dev:packages:css dev:packages:react",
+    "dev:packages:css": "pnpm -rF @momoi/css dev",
+    "dev:packages:react": "pnpm -rF @momoi/react dev --host 0.0.0.0",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
@@ -43,6 +45,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "lightningcss": "^1.21.5",
+    "npm-run-all": "^4.1.5",
     "tsup": "^7.2.0",
     "typescript": "^5.1.6",
     "vite": "^4.4.9",
