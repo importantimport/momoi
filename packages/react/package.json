@@ -1,18 +1,14 @@
 {
   "name": "@momoi/react",
   "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
     "dev": "ladle serve",
     "build": "ladle build",
     "preview": "ladle preview"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "@ladle/react": "^2.17.2"
+    "@ladle/react": "^2.17.2",
+    "@momoi/css": "workspace:*"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.0.2"

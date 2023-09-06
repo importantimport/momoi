@@ -1,13 +1,11 @@
 {
   "name": "@momoi/css",
   "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
     "dev": "tsup --watch",
     "build": "tsup"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "devDependencies": {
+    "@radix-ui/colors": "^2.1.0"
+  }
 }
