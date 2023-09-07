@@ -1,7 +1,9 @@
 {
   "name": "@momoi/css",
   "version": "0.0.0",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "exports": {
     "./*": {
       "types": "./dist/*.css.d.mts",
@@ -33,5 +35,8 @@
   },
   "devDependencies": {
     "@radix-ui/colors": "^2.1.0"
+  },
+  "dependencies": {
+    "@vanilla-extract/recipes": "^0.5.0"
   }
 }
