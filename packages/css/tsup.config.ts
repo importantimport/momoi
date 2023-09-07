@@ -4,10 +4,11 @@ import { defineConfig } from 'tsup'
 
 export default defineConfig(({ watch }) => ({
   dts: true,
-  entry: Object.fromEntries(
-    glob
-      .sync(['src/**/*.css.ts'])
-      .map(entry => [entry.slice(4, -7), entry]),
+  entry: Object.fromEntries(glob
+    // glob all vanilla-extract file
+    .sync(['src/**/*.css.ts'])
+    // 'src/vars.css.ts' => ['vars', 'src/vars.css.ts']
+    .map(entry => [entry.slice(4, -7), entry]),
   ),
   esbuildPlugins: [
     vanillaExtractPlugin({ identifiers: watch ? 'debug' : 'short' }) as any,
