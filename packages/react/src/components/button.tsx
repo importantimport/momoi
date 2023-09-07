@@ -1,3 +1,4 @@
+import '@momoi/css/reset.css'
 import { button } from '@momoi/css/styles/components/button'
 import '@momoi/css/styles/components/button.css'
 import { Slot } from '@radix-ui/react-slot'
