@@ -4,7 +4,7 @@ import { assignVars, createGlobalTheme, globalStyle } from '@vanilla-extract/css
 import { convertRadixColor } from '../utils/colors'
 import { type Theme, vars } from '../vars.css'
 
-export const themePink = {
+export const pinkThemeLight = {
   color: {
     neutral: convertRadixColor(slate),
     primary: convertRadixColor(pink),
@@ -12,7 +12,7 @@ export const themePink = {
   },
 } satisfies Theme
 
-export const themePinkDark = {
+export const pinkThemeDark = {
   color: {
     neutral: convertRadixColor(slateDark),
     primary: convertRadixColor(pinkDark),
@@ -23,14 +23,14 @@ export const themePinkDark = {
 globalStyle(':root', {
   '@media': {
     '(perfers-color-scheme: dark)': {
-      vars: assignVars(vars, themePinkDark),
+      vars: assignVars(vars, pinkThemeDark),
     },
     '(perfers-color-scheme: light)': {
-      vars: assignVars(vars, themePink),
+      vars: assignVars(vars, pinkThemeLight),
     },
   },
 })
 
-createGlobalTheme('[data-theme="dark"]', vars, themePinkDark)
+createGlobalTheme('[data-theme="dark"]', vars, pinkThemeDark)
 
-createGlobalTheme('[data-theme="light"]', vars, themePink)
+createGlobalTheme('[data-theme="light"]', vars, pinkThemeLight)

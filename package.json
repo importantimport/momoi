@@ -44,6 +44,7 @@
     "eslint-plugin-perfectionist": "^1.5.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
+    "fast-glob": "^3.3.1",
     "lightningcss": "^1.21.5",
     "npm-run-all": "^4.1.5",
     "tsup": "^7.2.0",

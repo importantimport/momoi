@@ -1,30 +1,24 @@
 {
   "name": "@momoi/css",
   "version": "0.0.0",
+  "type": "module",
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "exports": {
     "./*": {
-      "types": "./dist/*.css.d.mts",
-      "import": "./dist/*.css.mjs"
+      "types": "./dist/*.d.ts",
+      "import": "./dist/*.js"
     },
     "./*.js": {
-      "types": "./dist/*.css.d.mts",
-      "import": "./dist/*.css.mjs"
+      "types": "./dist/*.d.ts",
+      "import": "./dist/*.js"
     },
-    "./*.mjs": {
-      "types": "./dist/*.css.d.mts",
-      "import": "./dist/*.css.mjs"
-    },
-    "./*.css": "./dist/*.css.css",
-    "./dist/*": {
-      "types": "./dist/*.css.d.mts",
-      "import": "./dist/*.css.mjs"
-    },
-    "./dist/*.mjs": {
-      "types": "./dist/*.css.d.mts",
-      "import": "./dist/*.css.mjs"
+    "./*.css": "./dist/*.css",
+    "./dist/*.js": {
+      "types": "./dist/*.d.ts",
+      "import": "./dist/*.js"
     },
     "./dist/*.css": "./dist/*.css.css",
     "./src/*": "./src/*"
