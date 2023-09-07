@@ -1,7 +1,7 @@
 import type { Story } from '@ladle/react'
 
-import { Button } from './button'
+import { Button as MButton } from './button'
 
-export const ButtonDemo: Story = () => (
-  <Button>Button</Button>
+export const Button: Story = () => (
+  <MButton>Button</MButton>
 )
