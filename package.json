@@ -4,7 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "preinstall": "npx -y only-allow pnpm",
+    "postinstall": "npx -y nolyfill install --pm pnpm",
+    "dev": "vite --host 0.0.0.0",
     "dev:react": "run-p dev:packages:css dev:packages:react",
     "dev:packages:css": "pnpm -rF @momoi/css dev",
     "dev:packages:react": "pnpm -rF @momoi/react dev --host 0.0.0.0",
