@@ -1,9 +1,12 @@
 import * as Form from '@momoi/react/primitives/form'
+import { useEffect } from 'react'
 
-// import { useMatrixClient } from '~/context'
+import { useMatrixClient } from '~/context'
 
 function Login() {
-  // const client = useMatrixClient()
+  const client = useMatrixClient()
+
+  useEffect(() => client && client.logout(), [client])
 
   return (
     <Form.Root className="FormRoot">
