@@ -9,8 +9,25 @@ function Login() {
   useEffect(() => client && client.logout(), [client])
 
   return (
-    <Form.Root className="FormRoot">
-      <Form.Field className="FormField" name="email">
+    <Form.Root>
+      <Form.Field name="homeserver">
+        <div style={{ alignItems: 'baseline', display: 'flex', justifyContent: 'space-between' }}>
+          <Form.Label>Homeserver</Form.Label>
+          <Form.Message match="valueMissing">
+            Please enter your homeserver
+          </Form.Message>
+          <Form.Message match="typeMismatch">
+            Please provide a valid homeserver
+          </Form.Message>
+        </div>
+        <Form.Control asChild>
+          {/* fetch https://${homeserver}/.well-known/matrix/client */}
+          {/* maybe: ?_cacheBuster=${cacheBuster} */}
+          {/* m.homeserver m.identity_server org.matrix.msc3575.proxy */}
+          <input required type="url" />
+        </Form.Control>
+      </Form.Field>
+      {/* <Form.Field className="FormField" name="email">
         <div style={{ alignItems: 'baseline', display: 'flex', justifyContent: 'space-between' }}>
           <Form.Label className="FormLabel">Email</Form.Label>
           <Form.Message className="FormMessage" match="valueMissing">
@@ -39,7 +56,7 @@ function Login() {
         <button className="Button" style={{ marginTop: 10 }}>
           Post question
         </button>
-      </Form.Submit>
+      </Form.Submit> */}
     </Form.Root>
   )
 }
