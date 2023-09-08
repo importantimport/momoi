@@ -3,7 +3,7 @@ import glob from 'fast-glob'
 import { defineConfig } from 'tsup'
 
 export default defineConfig(({ watch }) => ({
-  dts: true,
+  dts: { resolve: true },
   entry: Object.fromEntries(glob
     // glob all vanilla-extract file
     .sync(['src/**/*.css.ts'])
