@@ -3,9 +3,11 @@
   "type": "module",
   "version": "0.0.0",
   "scripts": {
-    "dev": "ladle serve",
-    "build": "ladle build",
-    "preview": "ladle preview"
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "dev:docs": "ladle serve",
+    "build:docs": "ladle build",
+    "preview:docs": "ladle preview"
   },
   "devDependencies": {
     "@ladle/react": "^2.17.2",
