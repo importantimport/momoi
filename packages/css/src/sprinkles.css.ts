@@ -1,7 +1,4 @@
-import {
-  createSprinkles,
-  defineProperties,
-} from '@vanilla-extract/sprinkles'
+import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles'
 
 // import { vars } from './vars.css'
 
