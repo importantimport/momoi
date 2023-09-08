@@ -1,6 +1,6 @@
 import { type createGlobalTheme, createGlobalThemeContract } from '@vanilla-extract/css'
 
-import { createThemeColorContrast } from './utils/colors'
+import { createThemeColorContrast } from '~/utils/colors'
 
 export const vars = createGlobalThemeContract({
   color: {

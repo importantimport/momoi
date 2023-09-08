@@ -1,5 +1,6 @@
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin'
 import { defineConfig, splitVendorChunkPlugin } from 'vite'
+import tsconfigPaths from 'vite-tsconfig-paths'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -14,5 +15,6 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     vanillaExtractPlugin({ identifiers: mode === 'production' ? 'short' : 'debug' }),
     splitVendorChunkPlugin(),
+    tsconfigPaths(),
   ],
 }))

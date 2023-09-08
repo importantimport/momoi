@@ -5,7 +5,7 @@
 
 import { globalStyle } from '@vanilla-extract/css'
 
-import { reset } from './layers.css'
+import { reset } from '~/layers.css'
 
 /**
  * 1. Prevent padding and border from affecting element width.
