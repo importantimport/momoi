@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "preinstall": "npx -y only-allow pnpm && npx -y nolyfill install --pm pnpm",
-    "dev": "run-p dev:packages:css dev:packages:react",
+    "dev": "run-p dev:packages:css dev:packages:react dev:packages:momoi",
     "dev:docs": "run-p dev:packages:css dev:packages:react",
     "dev:packages:momoi": "vite --host 0.0.0.0",
     "dev:packages:css": "pnpm -rF @momoi/css dev",
