@@ -4,7 +4,8 @@ import { type SubmitHandler, useForm } from 'react-hook-form'
 import { type Input, object, string } from 'valibot'
 
 import { useMatrixClient } from '~/context'
-import { Navigate } from '~/router'
+
+// import { Navigate } from '~/router'
 
 const schema = object({
   password: string(),
@@ -19,10 +20,7 @@ export const User = () => {
   const { handleSubmit, register } = useForm<Schema>({ resolver: valibotResolver(schema) })
 
   const onSubmit: SubmitHandler<Schema> = async ({ password, user }) => {
-    matrixClient?.login('m.login.password', {
-      password,
-      user,
-    })
+    matrixClient?.loginWithPassword(user, password)
     await matrixClient?.initRustCrypto()
     await matrixClient?.startClient()
 
@@ -30,8 +28,8 @@ export const User = () => {
     console.log(matrixClient?.getSyncState())
   }
 
-  if (matrixClient?.isLoggedIn)
-    return <Navigate to="/" />
+  // if (matrixClient?.isLoggedIn)
+  //   return <Navigate to="/" />
 
   return (
     <Form.Root onSubmit={handleSubmit(onSubmit)}>

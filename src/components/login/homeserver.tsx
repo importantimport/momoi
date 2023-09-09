@@ -18,21 +18,16 @@ export const Homeserver = () => {
   const { handleSubmit, register } = useForm<Schema>({ resolver: valibotResolver(schema) })
 
   const onSubmit: SubmitHandler<Schema> = async ({ homeserver }) => {
-    // eslint-disable-next-line no-console
-    console.log(homeserver)
-
     const matrix = await fetch(new URL('/.well-known/matrix/client', homeserver).toString())
       .then(res => res.json())
 
     // eslint-disable-next-line no-console
-    console.log(matrix['m.homeserver'], matrix['m.identity_server'], matrix['org.matrix.msc3575.proxy'])
+    console.log(matrix)
 
-    const matrixClient = createClient({
-      baseUrl: matrix['m.homeserver'],
-      idBaseUrl: matrix['m.identity_server'],
-    })
-
-    setMatrixClient(matrixClient)
+    setMatrixClient(createClient({
+      baseUrl: matrix['m.homeserver'].base_url,
+      idBaseUrl: matrix['m.identity_server'].base_url,
+    }))
   }
 
   return (

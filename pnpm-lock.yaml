@@ -34,6 +34,9 @@ importers:
       '@mantine/hooks':
         specifier: 7.0.0-beta.0
         version: 7.0.0-beta.0(react@18.2.0)
+      '@matrix-org/olm':
+        specifier: ^3.2.15
+        version: 3.2.15
       '@momoi/react':
         specifier: workspace:*
         version: link:packages/react
@@ -1045,6 +1048,10 @@ packages:
   /@matrix-org/matrix-sdk-crypto-wasm@1.2.1:
     resolution: {integrity: sha512-DCb7Q83PCQK0uav5vB3KNV/hJPlxAhT/ddar+VHz2kC39hMLKGzWYVhprpLYVcavaE/6OX+Q/xFkAoV/3QtUHQ==}
     engines: {node: '>= 10'}
+    dev: false
+
+  /@matrix-org/olm@3.2.15:
+    resolution: {integrity: sha1-d7TfLNPbRwn1Lz1OsJobPWuYm7s=, tarball: https://gitlab.matrix.org/api/v4/projects/27/packages/npm/@matrix-org/olm/-/@matrix-org/olm-3.2.15.tgz}
     dev: false
 
   /@mdx-js/mdx@2.3.0:

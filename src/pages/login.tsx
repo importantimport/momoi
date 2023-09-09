@@ -1,15 +1,16 @@
-import { useEffect } from 'react'
+// import { useEffect } from 'react'
 
 import Homeserver from '~/components/login/homeserver'
 import User from '~/components/login/user'
-import { useMatrixClient } from '~/context'
+
+// import { useMatrixClient } from '~/context'
 
 function Login() {
-  const client = useMatrixClient()
+  // const client = useMatrixClient()
 
-  useEffect(() => {
-    client?.logout()
-  }, [client])
+  // useEffect(() => {
+  //   client?.logout()
+  // }, [client])
 
   return (
     <>
