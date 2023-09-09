@@ -31,44 +31,46 @@ export const User = () => {
   // if (matrixClient?.isLoggedIn)
   //   return <Navigate to="/" />
 
-  return (
-    <Form.Root onSubmit={handleSubmit(onSubmit)}>
-      {matrixClient ? 'client' : 'undefined'}
-      <Form.Field name="user">
-        <div style={{ alignItems: 'baseline', display: 'flex', justifyContent: 'space-between' }}>
-          <Form.Label>Username</Form.Label>
-          <Form.Message match="valueMissing">
-            Please enter your username
-          </Form.Message>
-          <Form.Message match="typeMismatch">
-            Please provide a valid username
-          </Form.Message>
-        </div>
-        <Form.Control asChild>
-          <input {...register('user')} required type="text" />
-        </Form.Control>
-      </Form.Field>
-      <Form.Field name="password">
-        <div style={{ alignItems: 'baseline', display: 'flex', justifyContent: 'space-between' }}>
-          <Form.Label>Password</Form.Label>
-          <Form.Message match="valueMissing">
-            Please enter your password
-          </Form.Message>
-          <Form.Message match="typeMismatch">
-            Please provide a valid password
-          </Form.Message>
-        </div>
-        <Form.Control asChild>
-          <input {...register('password')} required type="password" />
-        </Form.Control>
-      </Form.Field>
-      <Form.Submit asChild>
-        <button style={{ marginTop: 10 }}>
-          Submit
-        </button>
-      </Form.Submit>
-    </Form.Root>
-  )
+  return matrixClient
+    ? (
+      <Form.Root onSubmit={handleSubmit(onSubmit)}>
+        {matrixClient ? 'client' : 'undefined'}
+        <Form.Field name="user">
+          <div style={{ alignItems: 'baseline', display: 'flex', justifyContent: 'space-between' }}>
+            <Form.Label>Username</Form.Label>
+            <Form.Message match="valueMissing">
+              Please enter your username
+            </Form.Message>
+            <Form.Message match="typeMismatch">
+              Please provide a valid username
+            </Form.Message>
+          </div>
+          <Form.Control asChild>
+            <input {...register('user')} required type="text" />
+          </Form.Control>
+        </Form.Field>
+        <Form.Field name="password">
+          <div style={{ alignItems: 'baseline', display: 'flex', justifyContent: 'space-between' }}>
+            <Form.Label>Password</Form.Label>
+            <Form.Message match="valueMissing">
+              Please enter your password
+            </Form.Message>
+            <Form.Message match="typeMismatch">
+              Please provide a valid password
+            </Form.Message>
+          </div>
+          <Form.Control asChild>
+            <input {...register('password')} required type="password" />
+          </Form.Control>
+        </Form.Field>
+        <Form.Submit asChild>
+          <button style={{ marginTop: 10 }}>
+            Submit
+          </button>
+        </Form.Submit>
+      </Form.Root>
+      )
+    : undefined
 }
 
 export default User
