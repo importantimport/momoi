@@ -6,7 +6,9 @@ import { useMatrixClient } from '~/context'
 function Login() {
   const client = useMatrixClient()
 
-  useEffect(() => client && client.logout(), [client])
+  useEffect(() => {
+    client?.logout()
+  }, [client])
 
   return (
     <Form.Root>
