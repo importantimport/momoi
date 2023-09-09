@@ -1,11 +1,6 @@
 'use client'
 
-import { ReactRouterConcurrentNavigationProvider } from 'foxact/use-react-router-enable-concurrent-navigation'
+// eslint-disable-next-line react-refresh/only-export-components
+export { MatrixClientProvider, useMatrixClient, useSetMatrixClient } from '~/context/matrix-client'
 
-import { MatrixClientProvider, useMatrixClient, useSetMatrixClient } from '~/context/matrix-client'
-
-export {
-  MatrixClientProvider, ReactRouterConcurrentNavigationProvider,
-  // eslint-disable-next-line react-refresh/only-export-components
-  useMatrixClient, useSetMatrixClient,
-}
+export { ReactRouterConcurrentNavigationProvider } from 'foxact/use-react-router-enable-concurrent-navigation'
