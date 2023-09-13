@@ -1,11 +1,11 @@
 // import viteLogo from '/vite.svg'
-import { useLocalStorage } from '@mantine/hooks'
 
 // import { useState } from 'react'
 
 // import reactLogo from '~/assets/react.svg'
 import { useMatrixClient } from '~/context'
 import { Navigate } from '~/router'
+import { useAccessToken } from '~/utils/hooks/local-storage'
 
 import './index.css'
 
@@ -13,7 +13,7 @@ function App() {
   // const [count, setCount] = useState(0)
 
   const matrixClient = useMatrixClient()
-  const [accessToken] = useLocalStorage({ key: 'momoi-access-token' })
+  const [accessToken] = useAccessToken()
 
   if (matrixClient?.isLoggedIn) {
     // return <Navigate to="/room" />
