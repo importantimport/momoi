@@ -9,6 +9,6 @@ export const createThemeColorContrast = (name: string) =>
 
 export const convertRadixColor = (color: Record<string, string>) =>
   Object.fromEntries(
-    Object.entries(color)
-      .map(([_, value], i) => [i + 1, value]),
+    Object.values(color)
+      .map((value, i) => [i + 1, value]),
   )
