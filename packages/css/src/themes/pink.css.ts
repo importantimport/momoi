@@ -20,7 +20,7 @@ export const pinkThemeDark = {
   },
 } satisfies Theme
 
-globalStyle(':root', {
+globalStyle(':root, :host', {
   '@media': {
     '(prefers-color-scheme: dark)': {
       vars: assignVars(vars, pinkThemeDark),
@@ -31,6 +31,6 @@ globalStyle(':root', {
   },
 })
 
-createGlobalTheme('[data-theme="dark"]', vars, pinkThemeDark)
+createGlobalTheme('[data-theme="dark"], .dark', vars, pinkThemeDark)
 
-createGlobalTheme('[data-theme="light"]', vars, pinkThemeLight)
+createGlobalTheme('[data-theme="light"] .light', vars, pinkThemeLight)
