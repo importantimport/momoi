@@ -22,10 +22,10 @@ export const pinkThemeDark = {
 
 globalStyle(':root', {
   '@media': {
-    '(perfers-color-scheme: dark)': {
+    '(prefers-color-scheme: dark)': {
       vars: assignVars(vars, pinkThemeDark),
     },
-    '(perfers-color-scheme: light)': {
+    '(prefers-color-scheme: light)': {
       vars: assignVars(vars, pinkThemeLight),
     },
   },
