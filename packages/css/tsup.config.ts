@@ -14,4 +14,5 @@ export default defineConfig(({ watch }) => ({
     vanillaExtractPlugin({ identifiers: watch ? 'debug' : 'short' }) as any,
   ],
   format: ['esm'],
+  minify: !watch,
 }))
