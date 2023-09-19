@@ -28,6 +28,7 @@
     "dev": "tsup --watch"
   },
   "devDependencies": {
-    "@radix-ui/colors": "^2.1.0"
+    "@radix-ui/colors": "^2.1.0",
+    "open-props": "^1.5.15"
   }
 }

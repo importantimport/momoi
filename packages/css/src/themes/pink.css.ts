@@ -2,6 +2,7 @@ import { blue, blueDark, pink, pinkDark, slate, slateDark } from '@radix-ui/colo
 import { assignVars, createGlobalTheme, globalStyle } from '@vanilla-extract/css'
 
 import { convertRadixColor } from '~/utils/colors'
+import { opDark, opLight } from '~/utils/op'
 import { type Theme, vars } from '~/vars.css'
 
 export const pinkThemeLight = {
@@ -10,6 +11,7 @@ export const pinkThemeLight = {
     primary: convertRadixColor(pink),
     secondary: convertRadixColor(blue),
   },
+  op: opLight,
 } satisfies Theme
 
 export const pinkThemeDark = {
@@ -18,6 +20,7 @@ export const pinkThemeDark = {
     primary: convertRadixColor(pinkDark),
     secondary: convertRadixColor(blueDark),
   },
+  op: opDark,
 } satisfies Theme
 
 globalStyle(':root, :host', {
