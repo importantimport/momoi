@@ -1,6 +1,6 @@
 import '@momoi/css/reset.css'
-import { type ButtonVariants, button } from '@momoi/css/styles/components/button'
-import '@momoi/css/styles/components/button.css'
+import { type ButtonVariants, button } from '@momoi/css/components/button'
+import '@momoi/css/components/button.css'
 import { Slot } from '@radix-ui/react-slot'
 import * as React from 'react'
 
