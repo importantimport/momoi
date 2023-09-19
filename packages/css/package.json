@@ -1,11 +1,7 @@
 {
   "name": "@momoi/css",
-  "version": "0.0.0",
   "type": "module",
-  "files": [
-    "dist",
-    "src"
-  ],
+  "version": "0.0.0",
   "exports": {
     "./*": {
       "types": "./dist/*.d.ts",
@@ -23,9 +19,13 @@
     "./dist/*.css": "./dist/*.css.css",
     "./src/*": "./src/*"
   },
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
-    "dev": "tsup --watch",
-    "build": "tsup"
+    "build": "tsup",
+    "dev": "tsup --watch"
   },
   "devDependencies": {
     "@radix-ui/colors": "^2.1.0"

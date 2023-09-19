@@ -24,7 +24,7 @@ export const User = () => {
     await matrixClient?.initRustCrypto()
     await matrixClient?.startClient()
 
-    // eslint-disable-next-line no-console
+     
     console.log(matrixClient?.getSyncState())
   }
 

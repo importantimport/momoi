@@ -16,10 +16,10 @@ import { reset } from '~/layers.css'
 globalStyle('*, ::before, ::after', {
   '@layer': {
     [reset]: {
+      boxSizing: 'border-box',
       // borderColor: TODO
       borderStyle: 'solid',
       borderWidth: 0,
-      boxSizing: 'border-box',
     },
   },
 })
@@ -35,14 +35,14 @@ globalStyle('*, ::before, ::after', {
 globalStyle('html', {
   '@layer': {
     [reset]: {
-      /** 3 */
-      MozTabSize: 4,
-      /** 2 */
-      WebkitTextSizeAdjust: '100%',
       /** 1 */
       lineHeight: 1.5,
+      /** 2 */
+      WebkitTextSizeAdjust: '100%',
       /** 3 */
       tabSize: 4,
+      /** 3 */
+      MozTabSize: 4,
       /** 4 */
       // fontFamily: TODO,
       /** 5 */
@@ -60,10 +60,10 @@ globalStyle('html', {
 globalStyle('body', {
   '@layer': {
     [reset]: {
-      /** 2 */
-      lineHeight: 'inherit',
       /** 1 */
       margin: 0,
+      /** 2 */
+      lineHeight: 'inherit',
     },
   },
 })
@@ -77,12 +77,12 @@ globalStyle('body', {
 globalStyle('hr', {
   '@layer': {
     [reset]: {
-      /** 3 */
-      borderTopWidth: 1,
-      /** 2 */
-      color: 'inherit',
       /** 1 */
       height: 0,
+      /** 2 */
+      color: 'inherit',
+      /** 3 */
+      borderTopWidth: 1,
     },
   },
 })
@@ -154,9 +154,9 @@ globalStyle('small', {
 globalStyle('sub, sup', {
   '@layer': {
     [reset]: {
+      position: 'relative',
       fontSize: '75%',
       lineHeight: 0,
-      position: 'relative',
       verticalAlign: 'baseline',
     },
   },
@@ -190,12 +190,12 @@ globalStyle('sup', {
 globalStyle('table', {
   '@layer': {
     [reset]: {
+      /** 1 */
+      textIndent: 0,
       /** 3 */
       borderCollapse: 'collapse',
       /** 2 */
       borderColor: 'inherit',
-      /** 1 */
-      textIndent: 0,
     },
   },
 })
@@ -208,12 +208,12 @@ globalStyle('table', {
 globalStyle('button, input, optgroup, select, textarea', {
   '@layer': {
     [reset]: {
-      /** 1 */
-      color: 'inherit',
+      /** 3 */
+      padding: 0,
+      /** 2 */
+      margin: 0,
       /** 1 */
       fontFamily: 'inherit',
-      /** 1 */
-      fontFeatureSettings: 'inherit',
       /** 1 */
       fontSize: '100%',
       /** 1 */
@@ -221,11 +221,11 @@ globalStyle('button, input, optgroup, select, textarea', {
       /** 1 */
       fontWeight: 'inherit',
       /** 1 */
+      fontFeatureSettings: 'inherit',
+      /** 1 */
       lineHeight: 'inherit',
-      /** 2 */
-      margin: 0,
-      /** 3 */
-      padding: 0,
+      /** 1 */
+      color: 'inherit',
     },
   },
 })
@@ -246,12 +246,12 @@ globalStyle('button, select', {
 globalStyle('button, [type="button"], [type="reset"], [type="submit"]', {
   '@layer': {
     [reset]: {
-      /** 1 */
-      WebkitAppearance: 'button',
       /** 2 */
       backgroundColor: 'transparent',
       /** 2 */
       backgroundImage: 'none',
+      /** 1 */
+      WebkitAppearance: 'button',
     },
   },
 })
@@ -302,8 +302,8 @@ globalStyle('::-webkit-inner-spin-button, ::-webkit-outer-spin-button', {
 globalStyle('[type="search"]', {
   '@layer': {
     [reset]: {
-      WebkitAppearance: 'textfield',
       outlineOffset: '-2px',
+      WebkitAppearance: 'textfield',
     },
   },
 })
@@ -324,8 +324,8 @@ globalStyle('::-webkit-search-decoration', {
 globalStyle('::-webkit-file-upload-button', {
   '@layer': {
     [reset]: {
-      WebkitAppearance: 'button',
       font: 'inherit',
+      WebkitAppearance: 'button',
     },
   },
 })
@@ -351,8 +351,8 @@ globalStyle('blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre', {
 globalStyle('fieldset', {
   '@layer': {
     [reset]: {
-      margin: 0,
       padding: 0,
+      margin: 0,
     },
   },
 })
@@ -368,9 +368,9 @@ globalStyle('legend', {
 globalStyle('ol, ul, menu', {
   '@layer': {
     [reset]: {
-      listStyle: 'none',
-      margin: 0,
       padding: 0,
+      margin: 0,
+      listStyle: 'none',
     },
   },
 })
@@ -452,8 +452,8 @@ globalStyle('img, svg, video, canvas, audio, iframe, embed, object', {
 globalStyle('img, video', {
   '@layer': {
     [reset]: {
-      height: 'auto',
       maxWidth: '100%',
+      height: 'auto',
     },
   },
 })

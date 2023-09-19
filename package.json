@@ -1,10 +1,14 @@
 {
   "name": "momoi",
-  "private": true,
-  "version": "0.0.0",
   "type": "module",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "preinstall": "npx -y only-allow pnpm && npx -y nolyfill install --pm pnpm",
+    "build": "run-s build:packages:css build:packages:react build:momoi build:packages:react:docs",
+    "build:momoi": "tsc && vite build",
+    "build:packages:css": "pnpm -rF @momoi/css build",
+    "build:packages:react": "pnpm -rF @momoi/react build",
+    "build:packages:react:docs": "pnpm -rF @momoi/react build:docs",
     "dev": "run-p dev:packages:css dev:packages:react dev:momoi",
     "dev:all": "run-s dev:docs dev:momoi",
     "dev:docs": "run-p dev:packages:css dev:packages:react:docs",
@@ -12,13 +16,9 @@
     "dev:packages:css": "pnpm -rF @momoi/css dev",
     "dev:packages:react": "pnpm -rF @momoi/react dev",
     "dev:packages:react:docs": "pnpm -rF @momoi/react dev:docs --host 0.0.0.0",
-    "build": "run-s build:packages:css build:packages:react build:momoi build:packages:react:docs",
-    "build:momoi": "tsc && vite build",
-    "build:packages:css": "pnpm -rF @momoi/css build",
-    "build:packages:react": "pnpm -rF @momoi/react build",
-    "build:packages:react:docs": "pnpm -rF @momoi/react build:docs",
     "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint . --report-unused-disable-directives --max-warnings 0 --fix",
+    "preinstall": "npx -y only-allow pnpm && npx -y nolyfill install --pm pnpm",
     "preview": "vite preview"
   },
   "dependencies": {

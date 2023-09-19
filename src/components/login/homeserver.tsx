@@ -21,7 +21,7 @@ export const Homeserver = () => {
     const matrix = await fetch(new URL('/.well-known/matrix/client', homeserver).toString())
       .then(res => res.json())
 
-    // eslint-disable-next-line no-console
+     
     console.log(matrix)
 
     setMatrixClient(createClient({

@@ -25,14 +25,14 @@ const responsiveProperties = defineProperties({
   },
   defaultCondition: 'xs',
   properties: {
+    display: ['none', 'flex', 'block', 'inline'],
+    flexDirection: ['row', 'column'],
     alignItems: [
       'stretch',
       'flex-start',
       'center',
       'flex-end',
     ],
-    display: ['none', 'flex', 'block', 'inline'],
-    flexDirection: ['row', 'column'],
     justifyContent: [
       'stretch',
       'flex-start',
