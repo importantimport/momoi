@@ -17,8 +17,8 @@
     "build:packages:css": "pnpm -rF @momoi/css build",
     "build:packages:react": "pnpm -rF @momoi/react build",
     "build:packages:react:docs": "pnpm -rF @momoi/react build:docs",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "lint:fix": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
+    "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --report-unused-disable-directives --max-warnings 0 --fix",
     "preview": "vite preview"
   },
   "dependencies": {
