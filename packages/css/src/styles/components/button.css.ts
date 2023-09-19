@@ -10,7 +10,7 @@ export const button = recipe({
     boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
     color: `color-mix(in srgb, ${vars.color.neutral[11]} 50%, ${vars.color.neutral[12]})`, // white
   },
-  defaultVariants: { size: 'small' },
+  defaultVariants: { size: 'small', transform: 'none' },
   variants: {
     size: {
       medium: {
@@ -18,6 +18,12 @@ export const button = recipe({
       },
       small: {
         padding: 8,
+      },
+    },
+    transform: {
+      none: {},
+      skew: {
+        transform: 'skew(-15deg)',
       },
     },
   },
