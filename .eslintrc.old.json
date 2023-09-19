@@ -1,5 +1,5 @@
 {
-  "env": {"browser": true, "es2020": true},
+  "env": { "browser": true, "es2020": true },
   "extends": [
     "@antfu/react",
     "plugin:perfectionist/recommended-natural",
@@ -15,7 +15,7 @@
     "antfu/top-level-function": "off",
     "react-refresh/only-export-components": [
       "warn",
-      {"allowConstantExport": true}
+      { "allowConstantExport": true }
     ]
   }
 }
