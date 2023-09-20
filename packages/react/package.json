@@ -14,13 +14,19 @@
     "./*.css": "./dist/*.css",
     "./src/*": "./src/*"
   },
-  "files": ["dist", "src"],
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "build": "tsup",
     "build:docs": "ladle build",
     "dev": "tsup --watch",
     "dev:docs": "ladle serve",
     "preview:docs": "ladle preview"
+  },
+  "peerDependencies": {
+    "@momoi/css": "workspace:*"
   },
   "dependencies": {
     "@radix-ui/react-form": "^0.0.3",
