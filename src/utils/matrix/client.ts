@@ -21,7 +21,9 @@ export const initClient = async (options: ICreateClientOpts, displayName: string
   await matrixClient.initRustCrypto()
   await matrixClient.startClient({ lazyLoadMembers: true })
 
-  if ((await matrixClient.getDevice(options.deviceId!)).display_name !== displayName)
+  const { display_name: currentDisplayName } = await matrixClient.getDevice(options.deviceId!)
+
+  if (currentDisplayName !== displayName)
     matrixClient.setDeviceDetails(options.deviceId!, { display_name: displayName })
 
   // matrixClient.getCrypto()!.globalBlacklistUnverifiedDevices = false
