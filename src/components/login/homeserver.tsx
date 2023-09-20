@@ -1,10 +1,12 @@
 import { valibotResolver } from '@hookform/resolvers/valibot'
 import * as Form from '@momoi/react/primitives/form'
-import { createClient } from 'matrix-js-sdk'
 import { type SubmitHandler, useForm } from 'react-hook-form'
 import { type Input, object, startsWith, string, url } from 'valibot'
 
+import type { WellKnownMatrixClient } from '~/utils/matrix/types'
+
 import { useSetMatrixClient } from '~/context'
+import { initClient } from '~/utils/matrix/client'
 
 const schema = object({
   homeserver: string([url(), startsWith('https://')]),
@@ -18,13 +20,10 @@ export const Homeserver = () => {
   const { handleSubmit, register } = useForm<Schema>({ resolver: valibotResolver(schema) })
 
   const onSubmit: SubmitHandler<Schema> = async ({ homeserver }) => {
-    const matrix = await fetch(new URL('/.well-known/matrix/client', homeserver).toString())
+    const matrix: WellKnownMatrixClient = await fetch(new URL('/.well-known/matrix/client', homeserver).toString())
       .then(res => res.json())
 
-     
-    console.log(matrix)
-
-    setMatrixClient(createClient({
+    setMatrixClient(await initClient({
       baseUrl: matrix['m.homeserver'].base_url,
       idBaseUrl: matrix['m.identity_server'].base_url,
     }))
@@ -43,9 +42,6 @@ export const Homeserver = () => {
           </Form.Message>
         </div>
         <Form.Control asChild>
-          {/* fetch https://${homeserver}/.well-known/matrix/client */}
-          {/* maybe: ?_cacheBuster=${cacheBuster} */}
-          {/* m.homeserver m.identity_server org.matrix.msc3575.proxy */}
           <input {...register('homeserver')} required type="url" />
         </Form.Control>
       </Form.Field>

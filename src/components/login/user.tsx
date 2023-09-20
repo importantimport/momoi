@@ -22,10 +22,9 @@ export const User = () => {
   const onSubmit: SubmitHandler<Schema> = async ({ password, user }) => {
     matrixClient?.loginWithPassword(user, password)
     await matrixClient?.initRustCrypto()
-    await matrixClient?.startClient()
+    await matrixClient?.startClient({ lazyLoadMembers: true })
 
-     
-    console.log(matrixClient?.getSyncState())
+    // console.log(matrixClient?.getSyncState())
   }
 
   // if (matrixClient?.isLoggedIn)
@@ -69,7 +68,7 @@ export const User = () => {
           </button>
         </Form.Submit>
       </Form.Root>
-      )
+    )
     : undefined
 }
 

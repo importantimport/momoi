@@ -3,6 +3,7 @@ import { type MatrixClient } from 'matrix-js-sdk'
 
 // const initial_device_display_name: string = import.meta.env.MOMOI_INITIAL_DEVICE_DISPLAY_NAME ?? 'Momoi Web'
 
+// eslint-disable-next-line unicorn/no-useless-undefined
 const [MatrixClientProvider, useMatrixClient, useSetMatrixClient] = createContextState<MatrixClient | undefined>(undefined)
 
 // eslint-disable-next-line react-refresh/only-export-components
