@@ -15,10 +15,3 @@ export const headerTitle = style({
   filter: 'url(#white)',
   fontVariantEmoji: 'text',
 })
-
-export const headerButton = style({
-  padding: '0.5rem 1rem',
-  fontSize: '1rem',
-  color: 'pink',
-  backgroundColor: 'white',
-})

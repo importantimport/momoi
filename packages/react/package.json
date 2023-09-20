@@ -10,9 +10,11 @@
     "./*.js": {
       "types": "./dist/*.d.ts",
       "import": "./dist/*.js"
-    }
+    },
+    "./*.css": "./dist/*.css",
+    "./src/*": "./src/*"
   },
-  "files": ["dist"],
+  "files": ["dist", "src"],
   "scripts": {
     "build": "tsup",
     "build:docs": "ladle build",

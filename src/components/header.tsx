@@ -1,4 +1,6 @@
-import { header, headerButton, headerTitle } from '~/components/header.css'
+import { Button } from '@momoi/react/src/components/button'
+
+import { header, headerTitle } from '~/components/header.css'
 
 export const Header = () => (
   <header className={header}>
@@ -15,6 +17,7 @@ export const Header = () => (
       <path d="M0 0h48v48H0z" fill="currentColor" mask="url(#ipTPeach0)"></path>
     </svg>
     <span className={headerTitle}>Momoi</span>
-    <button className={headerButton}>?</button>
+    {/* <button className={headerButton}>?</button> */}
+    <Button>?</Button>
   </header>
 )

@@ -12,11 +12,6 @@
       "import": "./dist/*.js"
     },
     "./*.css": "./dist/*.css",
-    "./dist/*.js": {
-      "types": "./dist/*.d.ts",
-      "import": "./dist/*.js"
-    },
-    "./dist/*.css": "./dist/*.css.css",
     "./src/*": "./src/*"
   },
   "files": [

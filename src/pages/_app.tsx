@@ -5,8 +5,6 @@ import { createHead } from 'unhead'
 import { Header } from '~/components/header'
 import { MatrixClientProvider, ReactRouterConcurrentNavigationProvider } from '~/context'
 
-import './app.css'
-
 createHead()
 
 /* eslint-disable react/jsx-key */

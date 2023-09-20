@@ -7,9 +7,7 @@ import { useMatrixClient } from '~/context'
 import { Navigate } from '~/router'
 import { useAccessToken } from '~/utils/hooks/local-storage'
 
-import './index.css'
-
-function App() {
+const App = () => {
   // const [count, setCount] = useState(0)
 
   const matrixClient = useMatrixClient()
