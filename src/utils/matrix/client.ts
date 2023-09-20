@@ -4,7 +4,10 @@ import { createClient, type MatrixClient, type ICreateClientOpts } from 'matrix-
 import { createIndexedDBCryptoStore, createIndexedDBStore } from './store'
 
 export const initClient = async (options: ICreateClientOpts): Promise<MatrixClient> => {
-  await Olm.init({ localeFile: () => olmWasmPath })
+  // @ts-ignore
+  // TODO: https://gitlab.matrix.org/matrix-org/olm/-/issues/10
+  window.OLM_OPTIONS = {}
+  await Olm.init({ locateFile: () => olmWasmPath })
 
   const store = createIndexedDBStore('momoi-store')
   const cryptoStore = createIndexedDBCryptoStore('momoi-crypto-store')
