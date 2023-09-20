@@ -23,11 +23,15 @@ export const button = recipe({
       },
     },
     size: {
+      // height: 40px
       medium: {
         padding: 12,
       },
+      // height: 32px
       small: {
-        padding: 8,
+        minWidth: 32,
+        height: 32,
+        padding: 4,
       },
     },
   },

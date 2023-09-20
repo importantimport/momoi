@@ -1,5 +1,4 @@
 import { Button } from '@momoi/react/components/button'
-import '@momoi/react/components/button.css'
 
 import { header, headerTitle } from '~/components/header.css'
 
