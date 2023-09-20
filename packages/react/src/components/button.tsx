@@ -1,17 +1,17 @@
 import { type ButtonVariants, button } from '@momoi/css/components/button'
 import '@momoi/css/components/button.css'
 import { Slot } from '@radix-ui/react-slot'
-import React from 'react'
+import { type ButtonHTMLAttributes, forwardRef } from 'react'
 
 export type ButtonProps
-  = React.ButtonHTMLAttributes<HTMLButtonElement>
+  = ButtonHTMLAttributes<HTMLButtonElement>
   & {
     asChild?: boolean
     variant?: ButtonVariants
   }
 
 export const Button
-  = React.forwardRef<HTMLButtonElement, ButtonProps>(({ asChild, variant, ...props }, ref) => {
+  = forwardRef<HTMLButtonElement, ButtonProps>(({ asChild, variant, ...props }, ref) => {
     const Comp = asChild ? Slot : 'button'
 
     return <Comp
