@@ -5,21 +5,21 @@
 // import reactLogo from '~/assets/react.svg'
 import { useMatrixClient } from '~/context'
 import { Navigate } from '~/router'
-import { useAccessToken } from '~/utils/hooks/local-storage'
+// import { useAccessToken } from '~/utils/hooks/local-storage'
 
 const App = () => {
   // const [count, setCount] = useState(0)
 
   const matrixClient = useMatrixClient()
-  const [accessToken] = useAccessToken()
+  // const [accessToken] = useAccessToken()
 
   if (matrixClient?.isLoggedIn) {
     // return <Navigate to="/room" />
   }
-  else if (accessToken) {
-    matrixClient?.loginWithToken(accessToken)
-    // return <Navigate to="/room" />
-  }
+  // else if (accessToken) {
+  // matrixClient?.loginWithToken(accessToken)
+  // return <Navigate to="/room" />
+  // }
   else {
     return <Navigate to="/login" />
   }

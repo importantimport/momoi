@@ -1,9 +1,9 @@
 import Olm from '@matrix-org/olm'
 import olmWasmPath from '@matrix-org/olm/olm.wasm?url'
 import { createClient, type MatrixClient, type ICreateClientOpts } from 'matrix-js-sdk'
-import { createIndexedDBCryptoStore, createIndexedDBStore } from './store'
+import { createIndexedDBCryptoStore, createIndexedDBStore } from '~/utils/matrix/store'
 
-export const initClient = async (options: ICreateClientOpts): Promise<MatrixClient> => {
+export const initClient = async (options: ICreateClientOpts, displayName: string): Promise<MatrixClient> => {
   // @ts-ignore
   // TODO: https://gitlab.matrix.org/matrix-org/olm/-/issues/10
   window.OLM_OPTIONS = {}
@@ -18,8 +18,12 @@ export const initClient = async (options: ICreateClientOpts): Promise<MatrixClie
     cryptoStore,
   })
 
-  // await matrixClient.initRustCrypto
-  // await matrixClient.startClient({ lazyLoadMembers: true })
+  await matrixClient.initRustCrypto()
+  await matrixClient.startClient({ lazyLoadMembers: true })
+
+  if ((await matrixClient.getDevice(options.deviceId!)).display_name !== displayName)
+    matrixClient.setDeviceDetails(options.deviceId!, { display_name: displayName })
+
   // matrixClient.getCrypto()!.globalBlacklistUnverifiedDevices = false
 
   return matrixClient

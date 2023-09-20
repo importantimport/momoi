@@ -5,8 +5,7 @@ import { type Input, object, startsWith, string, url } from 'valibot'
 
 import type { WellKnownMatrixClient } from '~/utils/matrix/types'
 
-import { useSetMatrixClient } from '~/context'
-import { initClient } from '~/utils/matrix/client'
+import { useWellKnown } from '~/utils/hooks/local-storage'
 
 const schema = object({
   homeserver: string([url(), startsWith('https://')]),
@@ -15,7 +14,7 @@ const schema = object({
 type Schema = Input<typeof schema>
 
 export const Homeserver = () => {
-  const setMatrixClient = useSetMatrixClient()
+  const [, setWellKnown] = useWellKnown()
 
   const { handleSubmit, register } = useForm<Schema>({ resolver: valibotResolver(schema) })
 
@@ -23,10 +22,10 @@ export const Homeserver = () => {
     const matrix: WellKnownMatrixClient = await fetch(new URL('/.well-known/matrix/client', homeserver).toString())
       .then(res => res.json())
 
-    setMatrixClient(await initClient({
+    setWellKnown({
       baseUrl: matrix['m.homeserver'].base_url,
       idBaseUrl: matrix['m.identity_server'].base_url,
-    }))
+    })
   }
 
   return (
