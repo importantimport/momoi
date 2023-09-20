@@ -25,7 +25,8 @@
     "preview:docs": "ladle preview"
   },
   "peerDependencies": {
-    "@momoi/css": "workspace:*"
+    "@momoi/css": "workspace:*",
+    "react": "^18.2.0"
   },
   "dependencies": {
     "@radix-ui/react-form": "^0.0.3",
@@ -33,6 +34,7 @@
   },
   "devDependencies": {
     "@ladle/react": "^2.17.2",
-    "@momoi/css": "workspace:*"
+    "@momoi/css": "workspace:*",
+    "react": "^18.2.0"
   }
 }

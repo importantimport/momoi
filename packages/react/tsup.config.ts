@@ -9,6 +9,5 @@ export default defineConfig({
     // 'src/components/button.tsx' => ['components/button', 'src/components/button.tsx']
     .map(entry => [entry.slice(4, -4), entry]),
   ),
-  external: ['@momoi/css', 'react'],
   format: ['esm'],
 })
