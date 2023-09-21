@@ -16,8 +16,12 @@ export default defineConfig(({ mode }) => ({
     target: 'esnext',
   },
   css: { transformer: 'lightningcss' },
-  /** required by `matrix-js-sdk` */
-  define: { global: 'window' },
+  define: {
+    /** required by `matrix-js-sdk` */
+    global: 'window',
+    /** required by `react-secure-storage` */
+    'process.env': {},
+  },
   envPrefix: ['MOMOI_', 'VITE_'],
   plugins: [
     million.vite({ auto: true }),

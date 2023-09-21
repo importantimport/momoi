@@ -2,6 +2,8 @@ import { useLocalStorage } from '@mantine/hooks'
 
 import type { LoginResponse } from 'matrix-js-sdk/lib/@types/auth'
 
+import { useSecureLocalStorage } from '~/utils/hooks/use-secure-local-storage'
+
 export type MomoiWellKnown = {
   baseUrl: string,
   idBaseUrl: string
@@ -16,9 +18,11 @@ export type MomoiSecret = {
   // wellKnown: LoginResponse['well_known']
 }
 
-export const useSecret = () => useLocalStorage<MomoiSecret>({ key: 'momoi-secret' })
+export const useSecret = () =>
+  useSecureLocalStorage<MomoiSecret>({ key: 'momoi-secret' })
 
-export const useWellKnown = () => useLocalStorage<MomoiWellKnown>({ key: 'momoi-well-known' })
+export const useWellKnown = () =>
+  useLocalStorage<MomoiWellKnown>({ key: 'momoi-well-known' })
 
 // export const useAccessToken = () => useLocalStorage({key: 'momoi-access-token' })
 
