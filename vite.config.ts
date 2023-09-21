@@ -21,6 +21,11 @@ export default defineConfig(({ mode }) => ({
     global: 'window',
     /** required by `react-secure-storage` */
     'process.env': {},
+    /**
+     * required by `@matrix-org/olm`
+     * {@link https://gitlab.matrix.org/matrix-org/olm/-/issues/10}
+     */
+    'window.OLM_OPTIONS': {},
   },
   envPrefix: ['MOMOI_', 'VITE_'],
   plugins: [
