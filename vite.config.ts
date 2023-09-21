@@ -4,6 +4,7 @@ import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin'
 import react from '@vitejs/plugin-react-swc'
 import million from 'million/compiler'
 import { defineConfig, splitVendorChunkPlugin } from 'vite'
+import forgetti from 'vite-plugin-forgetti'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
 // https://vitejs.dev/config/
@@ -29,6 +30,13 @@ export default defineConfig(({ mode }) => ({
   },
   envPrefix: ['MOMOI_', 'VITE_'],
   plugins: [
+    forgetti({
+      preset: 'react',
+      filter: {
+        include: 'src/**/*.{ts,js,tsx,jsx}',
+        exclude: 'node_modules/**/*.{ts,js,tsx,jsx}',
+      }
+    }),
     million.vite({ auto: true }),
     react(),
     generouted(),

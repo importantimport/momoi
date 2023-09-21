@@ -55,6 +55,9 @@ importers:
       '@vanilla-extract/sprinkles':
         specifier: ^1.6.1
         version: 1.6.1(@vanilla-extract/css@1.12.0)
+      forgetti:
+        specifier: ^0.7.0
+        version: 0.7.0(@babel/core@7.22.10)
       foxact:
         specifier: ^0.2.20
         version: 0.2.20(react@18.2.0)
@@ -152,6 +155,9 @@ importers:
       vite:
         specifier: ^4.4.9
         version: 4.4.9(@types/node@20.6.0)(lightningcss@1.21.5)
+      vite-plugin-forgetti:
+        specifier: ^0.7.0
+        version: 0.7.0(forgetti@0.7.0)(vite@4.4.9)
       vite-tsconfig-paths:
         specifier: ^4.2.0
         version: 4.2.0(typescript@5.1.6)(vite@4.4.9)
@@ -3267,6 +3273,19 @@ packages:
     resolution: {integrity: sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==}
     dev: true
 
+  /forgetti@0.7.0(@babel/core@7.22.10):
+    resolution: {integrity: sha512-eeesQpbrdNdaNglIWvmbUXR+2GbBeFIBn0U+4aiWNJDa6JtAOjoWp7v6QJ1NRP+PP2s04GXOzyHYVl8LBIeh+Q==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      '@babel/core': ^7
+    dependencies:
+      '@babel/core': 7.22.10
+      '@babel/helper-module-imports': 7.22.5
+      '@babel/traverse': 7.22.10
+      '@babel/types': 7.22.10
+    transitivePeerDependencies:
+      - supports-color
+
   /foxact@0.2.20(react@18.2.0):
     resolution: {integrity: sha512-7Mez3d+t1xD+Qq85Xst03OFrLw+DlTXK7qn6bicIPIgnIDEopnRG5Bkz3/RgQp74+wvWb47BrUeq+tIFGbHxIg==}
     peerDependencies:
@@ -6146,6 +6165,22 @@ packages:
       - sugarss
       - supports-color
       - terser
+    dev: true
+
+  /vite-plugin-forgetti@0.7.0(forgetti@0.7.0)(vite@4.4.9):
+    resolution: {integrity: sha512-u/ZymHZqzUjD2Hk9+RgVQAF2w0RPREy0IhtM0VjdQN3GoAp3+T38M9kJIo4vZKhhmRci/seb6SnnsE0yQjuqQw==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      forgetti: 0.3.0
+      vite: ^3 || ^4
+    dependencies:
+      '@babel/core': 7.22.10
+      '@rollup/pluginutils': 5.0.3
+      forgetti: 0.7.0(@babel/core@7.22.10)
+      vite: 4.4.9(@types/node@20.6.0)(lightningcss@1.21.5)
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
     dev: true
 
   /vite-tsconfig-paths@3.6.0(vite@4.4.9):

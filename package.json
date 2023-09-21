@@ -32,6 +32,7 @@
     "@vanilla-extract/dynamic": "^2.0.3",
     "@vanilla-extract/recipes": "^0.5.0",
     "@vanilla-extract/sprinkles": "^1.6.1",
+    "forgetti": "^0.7.0",
     "foxact": "^0.2.20",
     "matrix-js-sdk": "^27.2.0",
     "million": "^2.5.13",
@@ -66,6 +67,7 @@
     "tsup": "^7.2.0",
     "typescript": "^5.1.6",
     "vite": "^4.4.9",
+    "vite-plugin-forgetti": "^0.7.0",
     "vite-tsconfig-paths": "^4.2.0"
   },
   "pnpm": {
