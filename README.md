@@ -1,5 +1,21 @@
 # 🍑 Momoi
 
+Momoi is in early development.
+
+## Packages
+
+### [`@momoi/app`](/)
+
+Matrix web client.
+
+### [`@momoi/css`](/packages/css/)
+
+Momoi component styles written using Vanilla Extract.
+
+### [`@momoi/react`](/packages/react/)
+
+React component library using `@momoi/css` and Radix Primitives.
+
 <!-- # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
